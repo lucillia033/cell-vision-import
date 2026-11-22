@@ -21,5 +21,11 @@ jobs:
       - name: pytest 설치
         run: pip install pytest
 
+      - name: 파이썬 문법 검사
+        run: python -m compileall -q app.py pages
+
+      - name: 자동 테스트 실행
+        run: python -m pytest -v
+
       - name: 자동 테스트 실행
         run: python -m pytest -v
